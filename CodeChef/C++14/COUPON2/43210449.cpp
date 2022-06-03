@@ -1,0 +1,72 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    int t, d, c, i, sum1, sum2;
+    cin>>t;
+    while(t--)
+    {
+        sum1=0;
+        sum2=0;
+        cin>>d>>c;
+        int a[3], b[3];
+        for(i=0;i<3;i++)
+        {
+            cin>>a[i];
+            sum1+=a[i];
+        }
+        for(i=0;i<3;i++)
+        {
+            cin>>b[i];
+            sum2+=b[i];
+        }
+        if(2*d<=c)
+        {
+            cout<<"NO"<<endl;
+            continue;
+        }
+        else
+        {
+            if(sum1<150)
+            {
+                if(sum2<150)
+                {
+                    cout<<"NO"<<endl;
+                }
+                else
+                {
+                    if((sum1+sum2+2*d)<=(sum1+sum2+d+c))
+                    {
+                        cout<<"NO"<<endl;
+                    }
+                    else
+                    {
+                        cout<<"YES"<<endl;
+                    }
+                }
+            }
+            else
+            {
+                if(sum2<150)
+                {
+                    if((sum1+sum2+2*d)<=(sum1+sum2+d+c))
+                    {
+                        cout<<"NO"<<endl;
+                    }
+                    else
+                    {
+                        cout<<"YES"<<endl;
+                    }
+                }
+                else
+                {
+                    cout<<"YES"<<endl;
+                }
+            }
+        }
+    }
+    return 0;
+}
