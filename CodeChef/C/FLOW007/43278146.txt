@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int t, n, rem, c, h;
+	scanf("%d", &t);
+	while(t--)
+	{
+	    c=0, h=0;
+	    scanf("%d", &n);
+	    while(n)
+	    {
+	        rem=n%10;
+	        n/=10;
+	        c++;
+	        if(rem==0)
+	        {
+	            h++;
+	        }
+	        if(rem==0&&h==c)
+	        {
+	            //printf("%d", rem);
+	            continue;
+	        }
+	        printf("%d", rem);
+	    }
+	    printf("\n");
+	}
+	return 0;
+}
+
